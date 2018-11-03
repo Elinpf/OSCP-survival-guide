@@ -1,7 +1,7 @@
 
 **This is a clone of [frizb/OSCP-Survival-Guide](https://github.com/frizb/OSCP-Survival-Guide)**
 
-**This can also be viewed on** (**x89k.tk**)[https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html]
+**This can also be viewed on** (x89k.tk)[https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html]
 
 # OSCP-Survival-Guide
 
