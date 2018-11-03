@@ -20,7 +20,7 @@ description: A survival guide to the OSCP.
 
 ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#table-of-contents)Table of Contents
 
-*   [Kali Linux](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#kali-linux)
+*   [Kali Linux](#kali-linux)
 *   [Information Gathering & Vulnerability Scanning](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#information-gathering--vulnerability-scanning)
     *   [Passive Information Gathering](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#passive-information-gathering)
     *   [Active Information Gathering](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#active-information-gathering)
