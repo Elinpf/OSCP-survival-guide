@@ -210,6 +210,11 @@
     *   Check for ACK or PSH flag set in a TCP packet  
         `tcpdump -A -n 'tcp[13] = 24' -r passwordz.pcap`
 
+*   Dsniff
+  
+    *   Display a pcap file with telnet protocol
+        `dsniff -p ch2.pcap`
+
 *   IPTables
 
     *   Deny traffic to ports except for Local Loopback
