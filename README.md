@@ -198,7 +198,7 @@
 
 *   Tcpdump
 
-    *   Display a pcap file  
+    *   Display a pcap file   
         `tcpdump -r passwordz.pcap`
 
     *   Display ips and filter and sort  
@@ -212,7 +212,7 @@
 
 *   Dsniff
   
-    *   Display a pcap file with telnet protocol
+    *   Display a pcap file with telnet protocol  
         `dsniff -p ch2.pcap`
 
 *   IPTables
@@ -263,6 +263,11 @@
         `git clone https://github.com/killswitch-GUI/SimplyEmail.git`
 
         `./SimplyEmail.py -all -e TARGET-DOMAIN`
+
+*   LDAP
+  
+    *   LDAP null bind  
+        `ldapsearch -x -b "ou=anonymous,dc=challenge01,dc=root-me,dc=org" -H "ldap://challenge01.root-me.org:54013"`
 
 *   Netcraft
 
